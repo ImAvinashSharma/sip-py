@@ -9,6 +9,7 @@ echo = 13
 GPIO. setup (echo, GPIO .IN)
 GPIO. setup (trig, GPIO. OUT)
 try:
+    ang=30
     while True:
         GPIO.output (trig, True)
         time.sleep (0.00001)
@@ -21,19 +22,18 @@ try:
             end = time. time ()
         distance = int(((end - start) * 34300) / 2)
         print("distance:", distance, "cm")
-        ang=30
-        if distance <=100 and ir():
+        if distance <=500 and ir():
             th(7)
-            while ang<=30:
+            while ang>30:
                 if ang >=180 and ang<0:
                     break
                 Main(ang=ang-5)
-        elif distance <=500 and distance >=101:
-            th(3)
-            while ang<=120:
+        elif distance >=500 and distance <=1900:
+            th(2)
+            while ang<=100:
+                Main(ang=ang+5)
                 if ang >=180 and ang<0:
                     break
-                Main(ang=ang-5)
         else:
             while ang<=160:
                 if ang >=180 and ang<0:

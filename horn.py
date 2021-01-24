@@ -3,7 +3,7 @@ from playsound import playsound
 import time
 try:
     def th(n):
-        for i in range(1,n):
+        for i in range(0,n):
             playsound('train_horn.mp3')
             time.sleep(0.7)
 except:

@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO
-import time
 sensor = 16
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(sensor,GPIO.IN)

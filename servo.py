@@ -23,8 +23,6 @@ def SetAngle2(angle):
     GPIO.output(11,True)
     pwm.ChangeDutyCycle(duty)
     GPIO.output(11, False)
-def a():
-    print("dsafdasf")
 def Main(ang):
     if __name__=='__main__':
         p1 = Process(target=SetAngle1(ang))
